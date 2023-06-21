@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    font-family: Averta, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+}
+#header{
+    height: 70px;
+    background-attachment: #fff;
+    width: 100%;
+    padding: 20 0;
+    color: #212529;
+    
+}
+#nav li a{
+    display: inline-block;
+    color: #007bff;
+}
+
+
+

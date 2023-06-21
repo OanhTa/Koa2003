@@ -1,0 +1,413 @@
+*{
+    padding: 0; margin: 0; box-sizing: border-box; 
+}
+    
+    html{ 
+        scroll-behavior: smooth;
+        font-family: helvetica,arial,sans-serif; 
+    }
+    /* main */
+    
+    #main{
+    
+    }
+    .row{
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+    .col{
+        float: left;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .col-3{
+        width: 33.333%;
+    }
+    .col-2{
+        width: 50%;
+    }
+    .col-full{
+        width: 100%;
+    }
+    .mt-8{
+        margin-top: 8px;
+    }
+    .mt-16{
+        margin-top: 16px;
+    }
+    .mt-32{
+        margin-top: 32px;
+    }
+    .row::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .clear{
+        clear: both;
+        /* Tao the trong khi dung float */
+    }
+    .text-white{
+        color: #fff !important;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .pull-right{
+        float: right;
+    }
+    .btn{
+        color: #fff;
+        background-color: #000;
+        text-decoration: none;
+        padding: 11px 16px;
+        display: inline-block;
+        margin-top: 15px;
+        border: none;
+        text-align: center;
+    }
+    .btn:hover{
+        color: #000;
+        background-color: #757575;
+        cursor: pointer;
+    }
+    #header{ 
+        position: fixed;
+        /*Bam dinh*/
+        height: 46px; 
+        background-color: #000; 
+        z-index: 1;
+        width: 100%;
+        
+    }
+    #nav{
+        display: inline-block;
+    }
+    #nav.subnav{ 
+        list-style: none; /*Bỏ dấu chấm của thẻ ul:*/
+    }
+    
+    #nav li{ 
+        display: inline-block; /*Nam tren dong full khoi*/
+        position: relative; /*Lopcha*/
+    } 
+    #nav li:hover a{ 
+        color: #000;
+    
+    } #nav .subnav li:hover a, #nav > li:hover > a{ 
+        background-color: #ccc; 
+    }
+    
+    #nav li a{ 
+        color: #fff; 
+        text-decoration:none; 
+        line-height: 46px; /*Chieu cao cua the chua*/
+        padding: 0 24px; 
+        display: block; 
+    } 
+    #nav>li>a{ 
+        text-transform: uppercase; /*Chu viet hoa*/
+    }
+    #nav .nav-arrow-down{
+        font-size: 14px;
+    }
+    #nav .subnav{ 
+        display: none; /*An*/
+        position: absolute; /*Lopcon*/
+        top:100%; 
+        left: 0; 
+        /* display: block; */ 
+        background-color: #fff; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+        /*Bong do, vien mo*/
+        min-width: 160px; 
+    } #nav .subnav li{ 
+        display: block; 
+    } #nav .subnav a{ 
+        padding: 0 16px; 
+        line-height: 38x; 
+        color: #000;
+    } #nav li:hover .subnav{ 
+        display: block; 
+    }
+    #header #mobile-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+    }
+    #header .mobile-menu-btn,
+    #header .search-btn{
+        float: right;
+        padding: 0 21px;
+    }
+    #header .mobile-menu-btn:hover{
+        background-color: #ccc;
+    }
+    #header .mobile-menu-btn:hover .menu-icon{
+        color: #000;
+    }
+    #header .search-btn:hover{
+        cursor: pointer;
+        background-color: #f44336;
+    }
+    #header .menu-icon,
+    #header .search-icon{
+        color: #fff;
+        font-size: 20px;
+        line-height: 46px;
+    }
+    
+    #slider{
+        padding-top: 50%;
+        /*nua chieu ngang->Chieu cao tao boi padding->1:2*/
+        background: url('../assets/la.jpg') top center /cover no-repeat;
+        position: relative;
+    }
+    #slider .text-content{
+        position: absolute;
+        bottom: 46px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+    }
+    #slider .text-heading{
+
+    }
+
+    
+    #content{
+    
+    }
+    #content .content-section{
+        width: 800px;
+        max-width: 100%;
+        padding: 64px 0 112px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 8px;
+        padding-right: 16px;
+    }
+    #content .section-heading{
+        font-size: 30px;
+        text-align: center;
+        font-weight: 500;
+        /* Net chu */
+        letter-spacing: 4px;/*kc chu*/
+    }
+    #content .section-sub-heading{
+        font-size: 15px;
+        text-align: center;
+        margin-top: 25px;
+        font-style: italic;
+        /* chu nghieng */
+    }
+    #content .about-text{
+        margin-top: 25px;
+        font-size: 15px;
+        line-height: 1.4;
+        text-align: justify;
+        /* can chinh hai ben */
+    }
+    #content .members-list{
+        margin-top: 32px;
+    }
+   
+    #content .members-name{
+        font-size: 15px;
+    }
+    #content .bandmember{
+        width: 154px;
+        margin-top: 15px;
+        border-radius: 4px;
+    }
+    
+    /* TOUR */
+    .tour-section{
+        background-color: #000;
+    }
+    .tickets-list{
+        background-color: #fff;
+        list-style: none;
+        /* không có dấu thẻ ul li */
+        margin-top: 40px;
+       
+    }
+    .tickets-list li{
+        color: #757575;
+        font-size: 15px;
+        padding: 11px 16px;
+        border-bottom: 1px solid #ddd;
+
+    }
+    .tickets-list .sold-out{
+        background-color: #f44336;
+        columns: #fff;
+        padding: 3px 4px;
+        margin-left: 16px;
+    }
+    .tickets-list .quantity{
+        float: right;
+        width: 24px;
+        height: 24px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 24px;
+        margin-top: -3px;
+    }
+    /* Places */
+    .places-list{
+        margin-top: 16px;
+    }
+    
+    .place-img{
+        width: 100%;
+        display: block;
+        
+    }
+    .place-img:hover{
+        opacity: 0.6;
+    }
+    .plance-body{
+        background-color: #fff;
+        color: #000;
+        padding: 16px;
+        font-size: 15px;
+    }
+    .place-heading{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .place-time{
+        margin-top: 15px;
+        color: #757575;
+    }
+    .place-decs{
+        margin-top: 15px;
+        line-height: 1.4;
+    }
+    
+    /* Tạm gỡ */
+    .modal{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        align-items: center;
+        justify-content: center;
+        /* display: flex; */
+        display: none;
+    }
+    .modal-container{
+        background-color: #fff;
+        width: 900px;
+        min-height: 200px;
+        max-width: calc(100% - 16px);
+    }
+    .modal-header{
+        height: 130px;
+        background-color: #009688;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: #fff;
+
+    }
+    .modal-body{
+        margin: 16px;
+    }
+    .modal-label{
+        font-size: 15px;
+        line-height: 1.4;
+        
+    }
+    .modal-input{
+        width: 100%;
+        height: 38px;
+        margin-top: 16px;
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+    
+    .modal-pay{
+        width: 100%;
+        background-color: #009688;
+        margin-top: 16px;
+        height: 38px;
+        border: 0;
+        color: #fff;
+    }
+    .modal-pay :hover{
+        opacity: 0.9;
+    }
+    p.modal-held {
+        float: right;
+        margin: 8px 0;
+    }
+    .modal-held a {
+        color: blue;
+    }
+    /* Contact from */
+    .contact-content{
+        margin-top: 48px;
+    }
+    .contact-info{
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .contact-info i{
+        display: inline-block;
+    }
+    .contact-ti{
+        margin: 0px 10px;
+
+    }
+    .contact-info a{
+        opacity: 0.8;
+    }
+    .contact-info a:hover{
+        opacity: 1;
+    }
+    .contact-form{
+        font-size: 15px;
+    }
+    .contact-form .form-control{
+        padding: 10px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+    .map {
+        width: 100%;
+    }   
+    #footer{
+        padding: 64px 16px;
+        text-align: center;
+
+    }
+    #footer.social-list{
+        font-size: 24px;
+    }
+    #footer .social-list a{
+        color: rgba(0, 0, 0, 0.6);
+        text-decoration: none;
+    }
+    #footer.copyright a,
+    #footer.social-list a:hover{
+        color: rgba(0, 0, 0, 0.4);
+        
+    }
+    #footer.copyright{
+        margin-top: 15px;
+        color: rgba(0, 0, 0, 0.6);
+
+    }
+    #footer.copyright a{
+        color: rgba(0, 0, 0, 0.6);
+        
+    }

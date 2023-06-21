@@ -1,0 +1,83 @@
+/* PC*/
+@media(min-width: 740px) and  (max-width: 1023px){
+    
+}
+/* Table and Mobile*/
+@media (max-width: 1023px){
+    .btn{
+        padding: 15px 16px;
+    }
+    #nav .subnav a{ 
+        padding:5px 12px;
+    }
+    .contact-form .form-control{
+        padding: 15px;
+    }
+    .contact-info{
+        line-height: 2;
+    }
+    .social-list{
+        font-size: 48px;
+    }
+    #footer.social-list a{
+        margin: 0 8px;
+    }
+    #footer.copyright a{
+        padding: 12px 0;
+        display: inline-block;
+        font-size: 18px;
+    }
+    
+}
+
+
+/* Mobie */
+@media(max-width: 740px){
+    .s-full-width,
+    .s-col-full{
+        width: 100%;
+    }
+    .s-mt-8{
+        margin-top: 8px;
+    }
+    #header{
+        overflow: hidden;
+    }
+    #header #mobile-menu {
+        display: block;
+    }
+    #header .search-btn{
+        display: none;
+    }
+    #nav{
+        display: block;
+        /* thẻ chứa hết chiều ngang */
+    }
+    #nav li a{
+        padding: 1px 24px;
+    }
+    #nav >li {
+        display: block;
+    }
+    #nav >li:first-child {
+        display: inline-block;
+        /* chỉ ăn chứa nội dung */
+    }
+    #nav .subnav{ 
+        position: initial;
+        /* mặc định để thẻ subnav k phải thẻ con của nav */
+        background-color: #333;
+
+    }
+    #nav .subnav a{ 
+       color: #fff;
+       padding:5px 41px;
+    }
+    #content .bandmember {
+        width: 60%;
+    }
+    .contact-form{
+        margin-top: 32px;
+    }
+    
+}
