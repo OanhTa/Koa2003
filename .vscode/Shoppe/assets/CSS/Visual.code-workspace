@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		},
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "C:/Users/Admin/Downloads/bootstrap-3.3.7-dist"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Visual"
+	}
+}
