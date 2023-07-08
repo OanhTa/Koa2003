@@ -1,0 +1,80 @@
+*{
+    box-sizing:border-box;
+  }
+  body{
+    font-family: 'Open Sans', Arial, sans-serif;
+    
+  }
+  .bold{
+    font-weight:bold;
+    color: #9400D3;
+  }
+  
+  #navbar {
+      position: fixed;
+      min-width: 290px;
+      top: 30px;
+      left: 2px;
+      width: 300px;
+      padding: 20px;
+      border: 3px solid #9400D3;
+      border-radius: 20px;
+      font-size:1.5rem;
+      font-weight: 500;
+      letter-spacing: 1.6;
+  }
+  #navbar ul li a:hover{
+    color:#9400D3;
+    border-left: 3px solid #9400D3;
+  }
+  #navbar ul li{
+    height:32px;
+    list-style:none;
+    
+  }
+  #navbar a{
+    text-decoration: none;
+    cursor: pointer;
+    color:#000;
+    
+    
+  }
+  #main-doc {
+      position: absolute;
+      margin-left: 300px;
+      padding: 20px 40px;
+      margin-bottom: 110px;
+      font-size:1.4rem;
+      letter-spacing: 1;
+      
+  }
+  .main-section header{
+    font-size:2rem;
+    font-weight: 600;
+    transform: scaleY(1.2);
+    /* font-style: italic; */
+    color: #9400D3;
+    letter-spacing: 3.2;
+    border-left: 5px solid #9400D3;
+  }
+  .main-section{
+    line-height:1.4;
+    text-align: justify;
+    
+  }
+  .main-section a{
+    color:#9400D3;
+    
+  }
+  #HTML{
+    
+  }
+  /* Kiểu dáng cho điện thoại di động */
+  @media (max-width: 599px) {
+   #navbar {
+     display:none;
+   }
+   #main-doc {
+     margin:0;
+   }
+  }
