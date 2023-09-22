@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    -Với bind()phương thức, một đối tượng có thể mượn một phương thức từ một đối tượng khác. 
+    -Phương thức bind() trả về một hàm mới (k sửa phương thức cũ)
+    -Có thể nhận đối số như những hàm ban đầu
+    -->
+    <button>Click me</button>
+</body>
+</html>
+<script>
+//VÍ DỤ
+    this.firstname = "Minh"
+    this.lastname = "Thu"
+
+    const teacher = {
+        firstname:'Minh',
+        lastname:'Thảo',
+        getFullname(data1, data2){
+            return `${this.firstname} ${this.lastname}`
+        }
+    }
+    const student = {
+        firstname:'Đăng',
+        lastname: 'Sơn'
+    }
+    //case1
+    console.log(teacher.getFullname())//Minh Thảo
+    //Gọi phương thức( hàm) thông qua đối tượng=> this là đôi tượng trc dấu chấm
+    
+    //case2
+    const getTeacherName = teacher.getFullname//trọc tới bộ nhớ của hàm getFullname
+    const getTeacherName1 = teacher.getFullname.bind(teacher)//ràng buộc this là obj teacher
+    const getStudentName = teacher.getFullname.bind(student)//ràng buộc this là obj teacher
+    
+    console.log(getTeacherName('Test1','Test'))//Minh Thu
+    console.log(getTeacherName1())//Minh Thảo
+    console.log(getStudentName())//Đặng Sơn
+    //Gọi phương thức(hàm) không thông qua đối tượng=>this là đối tượng trong hàm( global) sẽ trọc qua window
+
+//ỨNG DỤNG
+    const teacher2 = {
+            firstname:'Minh',
+            lastname:'Thảo',
+            getFullname(){
+                console.log( `${this.firstname} ${this.lastname}`)
+            }
+        }
+    const button = document.querySelector('button')
+
+    // button.onclick = function(){
+    //     teacher2.getFullname()
+    // } GÁM CHO MỘT HÀM 
+    button.onclick = teacher2.getFullname.bind(teacher2) //HÀM getFullname
+  
+</script>

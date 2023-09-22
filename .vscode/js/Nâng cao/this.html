@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // Từ khóa this trong js đề cập  đến đối tượng mà nó thuộc về
+    
+    //ĐẶC TÍNH
+    
+//Trong một phương thức, this tham chiếu đến đối tượng phương thức( đối tương trước dấu .)
+var ipon7 = {
+    name: 'iPhone7',
+    color: 'Pink',
+    weight: 300,
+
+    //Method
+    takePhoto(){
+        console.log(this)
+    },
+    //obj child
+    objChild:{
+        name: "obj child",
+        methodChild(){
+            console.log(this)
+        }
+    }
+}
+ipon7.takePhoto()//this = ipon7
+ipon7.objChild.methodChild()//this = objChild
+    
+//Đứng ngoài phương thức this tham chiếu đến đối tượng global(bên ngoài hoặc trong hàm)
+
+//LƯU Ý
+    //this trong hàm tạo đại diện cho đối tượng được tạo
+    //this trong hàm là underfine khi ở strict mode
+function Car(name, color){
+    this.name = name
+    this.color = color
+}
+Car.prototype.run = function(){
+    //Context
+    function test(){
+        console.log(this)
+    }
+    test();
+}
+
+const porche = new Car('Porche','yellow')
+const mercedesS450 = new Car('MercedesS450','black')
+
+console.log(porche.name)//this = porche
+console.log(porche.run)//this = window do function là một global/ underfine nếu ở strict mode
+console.log(mercedesS450.name)//this = mercedesS450
+
+
+</script>

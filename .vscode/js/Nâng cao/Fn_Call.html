@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- Là phương thức trong prototype của function, phương thức này được dùng để gọi hàm 
+    và cũng có thể bind this cho hàm-->
+ </body>
+ </html>
+ <script>
+    //Gọi hàm với call method
+    
+    //Gọi hàm và bind this, lưu ý trong phương thức strict mode vẫn có this nếu được bind
+    
+    //Thể hiện tính KẾ THỪA trong OOP
+    function Animal(){
+        this.name = name
+        this.weight = weight
+    }
+     function Chicken(name,weight,legs){
+        Animal.call(this,name,weight)//this là sonDang
+        //call gọi hàm truyền 2 tham sô và call bind() ràng buộc this
+        this.legs = legs
+     }
+
+     const sonDang = new Chicken('Son Dang',66,2)
+     console.log(sonDang)//{name: 'Son Dang',weight:66,legs:2}
+     
+     
+     //Mượn hàm( function borrowing), thêm ví dụ về arguments
+     function logger(){
+        console.log(...arguments)//không phải là mảng
+        //Mượn phương thức forEach trong mảng
+        const arr = Array.prototype.forEach.call(arguments, item =>{
+
+        })
+        //c2
+        const arr2 = [...arguments]
+     }
+     logger(1,2,3,4,5)//arguments{1,2,3,4,5}
+ </script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter car name" id="input">
+    <button id="submit">Add</button>
+    <ul id="root">
+
+    </ul>
+</body>
+</html>
+<script>
+    const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+
+    const app = (()=>{
+        const cars = ['BMW']
+
+        const root = $("#root")
+        const input = $("#input ")
+        const submit = $("#submit")
+
+        return {
+            add(car){
+                cars.push(car)
+            },
+            delete(index){
+                car.splice(index,1)
+            },
+            render(){
+                const html = cars.map((car, index) =>{
+                    return `<li>
+                        ${car}
+                        <span class="delete" data-index = "${index}">X</span>
+                        </li>`
+                })
+                .join('')
+
+                root.indexHTML = html
+            },
+            handleDelete(e){//event trong sự kiện gọi dưới
+                const deleteBtn = e.target.closet('.delete')
+                if(deleteBtn){
+                    const index = deleteBtn.dataset.index//lấy value(index) của data-index
+                    this.delete(index)
+                    this.render()
+                }   
+            },
+            init(){
+                const _this = this
+
+                submit.onclick = function(){
+                    const car = input.value;
+                    _this.add(car)
+                    _this.render()//hiện ra tất cả các car
+                }
+
+                root.onclick = this.handleDelete.bind(this)//function với this là app
+                this.render(car)
+            }
+        }
+    })();
+
+    app.init()
+
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Method apply gọi một hàm và với một this(bind) và truyền đối sớ cho hàm đó
+    
+    So sánh
+    Giong :Cú pháp va được kế thừa tử prototype
+    
+    Khác: 
+    -Bind:() 
+     +Trả vể một hàm mới với this tham chiếu tói thisArg
+     +Không thực hiện gọi hàm
+     + Nếu được bind kèm với arg1, arg2 thì các số này được ưu tiên hơn
+    -Call()
+     +Thực hiện bind this với thisArg và thực hiện gọi hàm
+     + Nhận các đối số cho hàm gốc tư arg1, arg2,...
+    -Apply()
+     +Thực hiện bind this với thisArg và thực hiện gọi hàm
+     + Nhận các đối số cho hàm gốc với dối số thứ 2 dưới dạng mảng [arg1, arg2,...]
+    -->
+</body>
+</html>
+<script>
+    //vd1
+    const teacher = {
+        firstName: 'Minh',
+        lastName: 'Thu'
+    }
+    function great(greeting, message){
+        return `${greeting} ${this.firstName} ${this.lastName} ${message}`
+    }
+     
+     let result = great.apply(teacher,['Em chào cô Minh Thu','Cô dạy môn j thế ak'])
+     console.log(result)
+    // Giong nhau
+     result = great.apply(teacher,'Em chào cô Minh Thu','Cô dạy môn j thế ak')
+     console.log(result)
+
+     //vd2
+     const teaCher = {
+        firstName: 'Minh',
+        lastName: 'Thảo',
+        isOnline: false,
+        goOnline(){
+            this.isOnline = true,
+            console.log(`${this.firstName} ${this.lastName} is online`)
+        },
+        goOffline(){
+            this.isOnline = false,
+            console.log(`${this.firstName} ${this.lastName} is offline`)
+        }
+    }
+    const me = {
+        firstName: 'Son',
+        lastName: 'Dang',
+        isOnline: false
+    }
+    console.log('teacher: ',teaCher.isOnline)//false
+    teaCher.goOnline()//Minh Thao is online
+    console.log('teacher: ',teaCher.isOnline)//true
+
+    console.log('student: ',me.isOnline)//false
+    teaCher.goOnline().apply(me)//Son Dang is online
+    console.log('student: ',me.isOnline)//true
+</script>
